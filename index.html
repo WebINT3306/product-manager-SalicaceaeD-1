@@ -75,8 +75,12 @@
     let sortAsc = false;
       
     loadProducts();
-    document.getElementById("th-name").onclick = sortByName;
-    document.getElementById("btn-add").onclick = addProduct;
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("th-name").addEventListener("click", sortByName);
+      document.getElementById("btn-add").addEventListener("click", addProduct);
+    });
+    //document.getElementById("th-name").onclick = sortByName;
+    //document.getElementById("btn-add").onclick = addProduct;
 
     function loadProducts() {
       const xhr = new XMLHttpRequest();

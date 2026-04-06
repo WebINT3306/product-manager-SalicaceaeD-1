@@ -73,7 +73,7 @@
   <script>
     let products = [];
     let sortAsc = false;
-      
+    
     loadProducts();
     document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("th-name").addEventListener("click", sortByName);
@@ -131,7 +131,8 @@
       icon.textContent = sortAsc ? "▲" : "▼";
     }
 
-    function addProduct() {
+    function addProduct(event) {
+      event.preventDefault();
       const nameInput = document.getElementById("input-name");
       const priceInput = document.getElementById("input-price");
       const quantityInput = document.getElementById("input-quantity");

@@ -73,12 +73,10 @@
   <script>
     let products = [];
     let sortAsc = false;
-
-    window.onload = function () {
-      loadProducts();
-      document.getElementById("th-name").onclick = sortByName;
-      document.getElementById("btn-add").onclick = addProduct;
-    };
+      
+    loadProducts();
+    document.getElementById("th-name").onclick = sortByName;
+    document.getElementById("btn-add").onclick = addProduct;
 
     function loadProducts() {
       const xhr = new XMLHttpRequest();

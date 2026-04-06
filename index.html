@@ -75,13 +75,6 @@
     let sortAsc = false;
     
     loadProducts();
-    document.addEventListener("DOMContentLoaded", function () {
-      document.getElementById("th-name").addEventListener("click", sortByName);
-      document.getElementById("btn-add").addEventListener("click", addProduct);
-    });
-    //document.getElementById("th-name").onclick = sortByName;
-    //document.getElementById("btn-add").onclick = addProduct;
-
     function loadProducts() {
       const xhr = new XMLHttpRequest();
 
@@ -114,7 +107,7 @@
       });
     }
 
-    function sortByName() {
+    document.getElementById("th-name").addEventListener("click", () => {
       sortAsc = !sortAsc;
 
       products.sort((a, b) => {
@@ -129,9 +122,10 @@
 
       const icon = document.getElementById("sort-icon");
       icon.textContent = sortAsc ? "▲" : "▼";
-    }
+    });
 
-    function addProduct(event) {
+
+    document.getElementById("btn-add").addEventListener("click", () => {
       event.preventDefault();
       const nameInput = document.getElementById("input-name");
       const priceInput = document.getElementById("input-price");
@@ -193,7 +187,7 @@
       if (categoryInput) categoryInput.value = "";
 
       console.log("Đã thêm:", newProduct);
-    }
+    });
   </script>
 </body>
 </html>
